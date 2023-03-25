@@ -3,7 +3,7 @@ public:
     
     void dfs(vector<int> &list,vector<int>& visit, int i,vector<vector<int>>& isConnected){
         for(int j=0;j<list.size();j++){
-                if(!visit[j] && i!=j && list[j]==1){
+                if(!visit[j] && list[j]==1){
                     visit[j]=1;
                     dfs(isConnected[j],visit,j,isConnected);
             }
