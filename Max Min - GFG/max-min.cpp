@@ -12,14 +12,25 @@ class Solution
    public:
     int findSum(int A[], int N)
     {
-    	int max = INT_MIN,min=INT_MAX;
-    	for(int i=0;i<N;i++){
-    	    if(A[i]>max)
-    	        max=A[i];
-    	    if(A[i]<min)
-    	        min=A[i];
-    	}
-    	return min+max;
+    //code here.
+    int min= A[0];
+    int max=A[0];
+    for(int i=0;i<N;i++)
+    {
+       if(min>A[i])
+       {
+           min =A[i];
+       }
+    }
+   
+    for(int i=0;i<N;i++)
+    {
+       if(max<A[i] )
+       {
+           max =A[i];
+       }
+    }
+    return min+max;
     }
 
 };
