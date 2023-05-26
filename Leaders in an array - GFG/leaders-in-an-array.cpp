@@ -14,15 +14,15 @@ class Solution{
     vector<int> leaders(int a[], int n){
         // Code here
         vector<int> ans;
-        int size=0,cur;
-        for(int i=0;i<n;i++){
-            cur = a[i];
-            while(ans.size()>0 && cur>ans[ans.size()-1]){
-                ans.pop_back();
+        int curmax=a[n-1];
+        ans.push_back(curmax);
+        for(int i=n-2;i>=0;i--){
+            if(a[i]>=curmax){
+                curmax = a[i];
+                ans.push_back(a[i]);
             }
-            ans.push_back(a[i]);
-            
         }
+        reverse(ans.begin(),ans.end());
         return ans;
         
     }
