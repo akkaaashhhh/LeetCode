@@ -42,20 +42,18 @@ class Solution{
             if(indeg[i]==0)
                 q.push(i);
     
-        vector<int> topo;
     
         while(!q.empty()){
             int node = q.front();
             q.pop();
-            topo.push_back(node);
+            ans+=char(node+'a');
             for(auto x : adj[node]){
                 indeg[x]--;
                 if(indeg[x]==0) q.push(x);
             }
         }
     
-        for(char c : topo)
-            ans+=char(c+'a');
+            
     
         return ans;
         
